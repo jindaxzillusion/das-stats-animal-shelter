@@ -7,11 +7,17 @@ information relating to each animal admitted to the shelter. You will have acces
 variables, recorded by animal admission:
 
 • Animal_type – The type of animal admitted to the shelter
+
 • Month – Month the animal was admitted, recorded numerically with January=1
+
 • Year. – Year the animal was admitted to the shelter.
+
 • Intake_type – Reason for the animal being admitted to the shelter
+
 • Outcome_type – Final outcome for the admitted animal
+
 • Chip_Status – Did the animal have a microchip with owner information?
+
 • Time_at_Shelter – Days spent at the shelter between being admitted and the final outcome.
 
 Task
