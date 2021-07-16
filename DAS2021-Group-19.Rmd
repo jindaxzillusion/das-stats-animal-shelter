@@ -61,8 +61,9 @@ glimpse(shelter)
 ```{r tidying data}
 shelter <- shelter %>% 
   mutate(animal=as.factor(animal_type),intake=as.factor(intake_type),outcome=as.factor(outcome_type),
-         chip=as.factor(chip_status)) %>% 
-  select(time=time_at_shelter,animal,intake,outcome,chip,month,year)
+         chip=as.factor(chip_status),time = time_at_shelter) %>% 
+  dplyr::select(time,animal,intake,outcome,chip,month,year)
+
 shelterbackup <- shelter
 ```
 
@@ -76,12 +77,12 @@ ggplot(data=shelter, aes(x=time))+
 ```
 
 ```{r summary of time}
-shelter %>%  select(time) %>%
+shelter %>%  dplyr::select(time) %>%
   summarise(mean=mean(time),s.d=sd(time),min=min(time),Q1=quantile(time,0.25), med=median(time),
   Q3=quantile(time,0.75),max=max(time))
 ```
 
-```{r summary}
+```{r summary, eval=FALSE}
 skim(shelter)
 ```
 
@@ -101,8 +102,10 @@ levels(shelter$on_time) <- c("no","yes")
 
 There are only two birds in the data and 13 wildlife. Therefore the impact these animal types will have on the other animal types will be minimal as they do not even contribute to 0.01% of the data, so they can be removed. 
 
-```{r minus 2 birds}
+```{r minus 2 birds + wildlife and outliers}
 shelter <- shelter %>% filter(!(animal=="BIRD" | animal=="WILDLIFE"))
+
+shelter <- shelter %>%  filter(time<=45)
 ```
 
 ```{r ggpairsio}
@@ -183,7 +186,7 @@ ggplot(data=shelter,aes(x=time,fill=animal))+
 Looking at the above plots, we see some change in distributions across different combinations of categories. 
 
 ```{r ggpairs}
-g1 <- shelter %>% select(-c(month,year)) %>% ggpairs(aes(fill=animal))
+g1 <- shelter %>% dplyr::select(-c(month,year)) %>% ggpairs(aes(fill=animal))
 g1$nrow <- 1
 g1$yAxisLabels <- g1$yAxisLabels[1]
 g1
