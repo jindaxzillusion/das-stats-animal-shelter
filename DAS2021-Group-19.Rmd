@@ -26,7 +26,7 @@ library(MASS)
 
 # Introduction {#sec:intro}
 
-## Dataset 19
+## Background Information
 
 Dataset 19 comes from the Dallas animal shelter. You will have access to the following
 variables, recorded by animal admission:
@@ -40,7 +40,7 @@ variables, recorded by animal admission:
 * `Time_at_Shelter` – Days spent at the shelter between being admitted and the final outcome.
 
 
-## Task
+## Question of Interest
 
 Imagine you have been asked by the shelter management to investigate the following questions of
 interest:
