@@ -122,7 +122,7 @@ ggplot(data = shelter, aes(x=time,group=animal))+
   geom_bar(aes(fill=animal),stat = "count")+
   facet_wrap(~animal)
 ```
-It would seem  that there is a slight difference in how long dogs and cats spend at the shelter by looking at the histograms, but from the boxplots we can see that both animals have very similar distributions: the medians are in similar places, their ranges are the similar, both have long tails (skewed right) and lots of outliers. It could be possible that this variable will be omitted from the final model. 
+It would seem that there is a slight difference in how long dogs and cats spend at the shelter by looking at the histograms, but from the boxplots we can see that both animals have very similar distributions: the medians are in similar places, their ranges are the similar, both have long tails (skewed right) and lots of outliers. It could be possible that this variable will be omitted from the final model. 
 
 ```{r intake explore}
 ggplot(data = shelter, aes(y=time, x=intake,group=intake))+
@@ -300,5 +300,5 @@ s1$deviance - s2$deviance < qchisq(df=2,0.95)
 ```
 Difference in deviance of nested models is less than the chi-square, therefore fit is good. *please check this*
 
-# Conclusions {#sec:Conc}
+
 
