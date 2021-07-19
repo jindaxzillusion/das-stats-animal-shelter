@@ -293,10 +293,12 @@ Coefficients still significant (by F-tests) but deviance still above chi-squared
 mod.nbfull <- glm.nb(data=shelter, time ~ intake + outcome + chip + animal)
 mod.nb6 <- glm.nb(data=shelter, time ~ intake + outcome)
 
-summary(mod.nbfull) #smaller deviance than poi full: 2155
-summary(mod.nb6) # smaller deviance than poi: 2153.4
-```
+s1 <- summary(mod.nbfull) #smaller deviance than poi full: 2156.3
+s2 <- summary(mod.nb6) # smaller deviance than poi: 2153.4
+s1$deviance - s2$deviance < qchisq(df=2,0.95)
 
+```
+Difference in deviance of nested models is less than the chi-square, therefore fit is good. *please check this*
 
 # Conclusions {#sec:Conc}
 
