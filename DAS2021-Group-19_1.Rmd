@@ -8,7 +8,7 @@ fig_caption: yes
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSaE, eval=TRUE,warning = FALSE,message = FALSE, comment = NA)
+knitr::opts_chunk$set(echo = FALSE, eval=TRUE,warning = FALSE,message = FALSE, comment = NA)
 library(ggplot2)
 library(dplyr)
 library(sjPlot)
