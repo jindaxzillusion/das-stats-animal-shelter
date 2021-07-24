@@ -307,6 +307,18 @@ coeffs
 ci <- exp(confint.default(mod.nb6))
 ci
 ```
+no interval contains one therefore we are confident that they are significant
+
+```{r plot}
+plot_model(mod.nb6,show.values = TRUE, title = "(Odds)")
+```
+
+
+all odds are less than one therefore they all have a negative effect on the rate of change of time i.e., as days increase these factors decrease the rate of time - the frequency for each day gets smaller.
+specifically, if a owner surrenders their animal, then we would expect a one day increase in time to reduce the frequency for the next day to be reduced by 80%.
+
+
+
 ```{r predict}
 shelter$prediction <- predict(mod.nb6, type="response")
 score <- prediction(shelter$prediction,shelter$on_time)
@@ -318,7 +330,7 @@ roc_plot<- ggplot(performance.d, aes(x= x, y=y)) + geom_line() +
   ggtitle(paste("Area under the curve:", round(auc@y.values[[1]], 3)))
 roc_plot
 ```
-$$\widehat{on~time} ~=~ 33.613 ~+~ 0.197~\cdot~ I_{Surrender}~ (i) ~+~ 0.283 ~\cdot~ I_{Stray}~ (i) ~+~
+$$\widehat{time} ~=~ 33.613 ~+~ 0.197~\cdot~ I_{Surrender}~ (i) ~+~ 0.283 ~\cdot~ I_{Stray}~ (i) ~+~
 0.386 ~\cdot~ I_{Died}~ (j) ~+~ \\
 0.493 ~\cdot~ I_{Euthanized}~ (j) ~+~ 0.0.589 ~\cdot~ I_{Foster}~ (j) ~+~ 0.211 ~\cdot~ I_{Returned}~ (j)$$
 
@@ -364,4 +376,7 @@ $$I_{\mbox{Returned}}(j) = \left\{
 \end{array}
 \right.$$
 # Conclusions {#sec:Conc}
+
+
+
 
