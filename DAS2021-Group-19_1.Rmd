@@ -330,7 +330,7 @@ roc_plot<- ggplot(performance.d, aes(x= x, y=y)) + geom_line() +
   ggtitle(paste("Area under the curve:", round(auc@y.values[[1]], 3)))
 roc_plot
 ```
-$$\widehat{on~time} ~=~ 33.613 ~+~ 0.197~\cdot~ I_{Surrender}~ (i) ~+~ 0.283 ~\cdot~ I_{Stray}~ (i) ~+~
+$$\widehat{time} ~=~ 33.613 ~+~ 0.197~\cdot~ I_{Surrender}~ (i) ~+~ 0.283 ~\cdot~ I_{Stray}~ (i) ~+~
 0.386 ~\cdot~ I_{Died}~ (j) ~+~ \\
 0.493 ~\cdot~ I_{Euthanized}~ (j) ~+~ 0.0.589 ~\cdot~ I_{Foster}~ (j) ~+~ 0.211 ~\cdot~ I_{Returned}~ (j)$$
 
