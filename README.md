@@ -1,7 +1,5 @@
 # Shelter
 
-This is the github repository for DAS-project 2, Group 19
-
 Datasets 16-20 come from the Dallas animal shelter. Each of the 5 datasets contain a variety of
 information relating to each animal admitted to the shelter. You will have access to the following
 variables, recorded by animal admission:
