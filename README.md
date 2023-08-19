@@ -1,4 +1,4 @@
-# https://github.com/jzhanguofg/DAS2021-Group-19/
+# Shelter
 
 This is the github repository for DAS-project 2, Group 19
 
@@ -20,7 +20,7 @@ variables, recorded by animal admission:
 
 • Time_at_Shelter – Days spent at the shelter between being admitted and the final outcome.
 
-Task
+## Task
 
 Imagine you have been asked by the shelter management to investigate the following questions of
 interest:
